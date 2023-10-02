@@ -4,8 +4,6 @@ package com.github.chen0040.rl.models;
 import com.github.chen0040.rl.utils.IndexValue;
 import com.github.chen0040.rl.utils.Matrix;
 import com.github.chen0040.rl.utils.Vec;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.*;
 
@@ -15,9 +13,48 @@ import java.util.*;
  * 9/27/2015 0027.
  * Q is known as the quality of state-action combination, note that it is different from utility of a state
  */
-@Getter
-@Setter
 public class QModel {
+
+    public Matrix getQ() {
+        return Q;
+    }
+
+    public void setQ(final Matrix q) {
+        Q = q;
+    }
+
+    public Matrix getAlphaMatrix() {
+        return alphaMatrix;
+    }
+
+    public void setAlphaMatrix(final Matrix alphaMatrix) {
+        this.alphaMatrix = alphaMatrix;
+    }
+
+    public double getGamma() {
+        return gamma;
+    }
+
+    public void setGamma(final double gamma) {
+        this.gamma = gamma;
+    }
+
+    public int getStateCount() {
+        return stateCount;
+    }
+
+    public void setStateCount(final int stateCount) {
+        this.stateCount = stateCount;
+    }
+
+    public int getActionCount() {
+        return actionCount;
+    }
+
+    public void setActionCount(final int actionCount) {
+        this.actionCount = actionCount;
+    }
+
     /**
     *  Q value for (state_id, action_id) pair
     *  Q is known as the quality of state-action combination, note that it is different from utility of a state

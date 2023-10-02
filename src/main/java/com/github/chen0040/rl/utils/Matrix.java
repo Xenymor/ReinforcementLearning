@@ -1,8 +1,6 @@
 package com.github.chen0040.rl.utils;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,13 +12,43 @@ import java.util.Map;
 /**
  * Created by xschen on 9/27/2015 0027.
  */
-@Getter
-@Setter
 public class Matrix implements Serializable {
     private Map<Integer, Vec> rows = new HashMap<>();
     private int rowCount;
     private int columnCount;
     private double defaultValue;
+
+    public Map<Integer, Vec> getRows() {
+        return rows;
+    }
+
+    public void setRows(final Map<Integer, Vec> rows) {
+        this.rows = rows;
+    }
+
+    public int getRowCount() {
+        return rowCount;
+    }
+
+    public void setRowCount(final int rowCount) {
+        this.rowCount = rowCount;
+    }
+
+    public int getColumnCount() {
+        return columnCount;
+    }
+
+    public void setColumnCount(final int columnCount) {
+        this.columnCount = columnCount;
+    }
+
+    public double getDefaultValue() {
+        return defaultValue;
+    }
+
+    public void setDefaultValue(final double defaultValue) {
+        this.defaultValue = defaultValue;
+    }
 
     public Matrix(){
 

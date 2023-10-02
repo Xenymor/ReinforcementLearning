@@ -1,7 +1,5 @@
 package com.github.chen0040.rl.utils;
 
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -13,8 +11,6 @@ import java.util.Set;
 /**
  * Created by xschen on 9/27/2015 0027.
  */
-@Getter
-@Setter
 public class Vec implements Serializable {
     private Map<Integer, Double> data = new HashMap<Integer, Double>();
     private int dimension;
@@ -345,5 +341,37 @@ public class Vec implements Serializable {
             clone.data.put(k, data.get(k) / norm);
         }
         return clone;
+    }
+
+    public Map<Integer, Double> getData() {
+        return data;
+    }
+
+    public void setData(final Map<Integer, Double> data) {
+        this.data = data;
+    }
+
+    public int getDimension() {
+        return dimension;
+    }
+
+    public void setDimension(final int dimension) {
+        this.dimension = dimension;
+    }
+
+    public double getDefaultValue() {
+        return defaultValue;
+    }
+
+    public void setDefaultValue(final double defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(final int id) {
+        this.id = id;
     }
 }

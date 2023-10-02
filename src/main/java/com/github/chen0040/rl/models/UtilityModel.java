@@ -1,8 +1,6 @@
 package com.github.chen0040.rl.models;
 
 import com.github.chen0040.rl.utils.Vec;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.Serializable;
 
@@ -18,8 +16,6 @@ import java.io.Serializable;
  * where $\sum_{s'} T(s,a,s')U(s')$ is the expected long term reward given that action $a$ is applied at state $s$
  * where $max_a \sum_{s'} T(s,a,s')U(s')$ is the maximum expected long term reward given that the chosen optimal action $a$ is applied at state $s$
  */
-@Getter
-@Setter
 public class UtilityModel implements Serializable {
     private Vec U;
     private int stateCount;
@@ -74,11 +70,10 @@ public class UtilityModel implements Serializable {
 
     @Override
     public boolean equals(Object rhs){
-        if(rhs != null && rhs instanceof  UtilityModel){
+        if(rhs instanceof UtilityModel){
             UtilityModel rhs2 = (UtilityModel)rhs;
             if(actionCount != rhs2.actionCount || stateCount != rhs2.stateCount) return false;
 
-            if((U==null && rhs2.U!=null) && (U!=null && rhs2.U ==null)) return false;
             return !(U != null && !U.equals(rhs2.U));
 
         }
@@ -87,5 +82,13 @@ public class UtilityModel implements Serializable {
 
     public void reset(double initialU){
         U.setAll(initialU);
+    }
+
+    public void setStateCount(final int stateCount) {
+        this.stateCount = stateCount;
+    }
+
+    public void setActionCount(final int actionCount) {
+        this.actionCount = actionCount;
     }
 }

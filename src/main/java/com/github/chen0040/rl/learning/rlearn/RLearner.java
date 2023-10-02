@@ -9,7 +9,6 @@ import com.github.chen0040.rl.actionselection.ActionSelectionStrategyFactory;
 import com.github.chen0040.rl.actionselection.EpsilonGreedyActionSelectionStrategy;
 import com.github.chen0040.rl.models.QModel;
 import com.github.chen0040.rl.utils.IndexValue;
-import lombok.Getter;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -24,6 +23,10 @@ public class RLearner implements Serializable, Cloneable{
     private ActionSelectionStrategy actionSelectionStrategy;
     private double rho;
     private double beta;
+
+    public ActionSelectionStrategy getActionSelectionStrategy() {
+        return actionSelectionStrategy;
+    }
 
     public String toJson() {
         return JSON.toJSONString(this, SerializerFeature.BrowserCompatible);
